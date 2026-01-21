@@ -12,6 +12,9 @@
     padding: 50px;
     
 }
+p{
+    line-height: 22px;
+}
 .left{
     margin-left: 50px;
     margin-top: 170px;
@@ -47,6 +50,9 @@
     margin-left: 180px;
     margin-top: 40px;
 }
+.form-item{
+    margin-top: 10px;
+}
 .input{
     width: 500px;
     height: 50px;
@@ -64,10 +70,11 @@
 .righth3{
     font-weight: 900;
     color: rgb(0, 0, 0);
+    margin-bottom: -15px;
 }
 .plus{
-    margin-left: 125px;
-
+    float: right;
+    margin-right: 240px;
 }
 .textarea{
     width: 505px;

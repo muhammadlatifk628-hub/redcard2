@@ -7,7 +7,7 @@
 }
 .container{
     display: flex;
-    background-color: brown;
+    background-color: rgb(165, 9, 9);
     position: relative;
     padding: 50px;
     margin-left: 13px;
@@ -70,6 +70,8 @@ p{
     border: 1px solid white;
    
 }
+
+
 ::placeholder {
     font-size: 15px;
   color: rgb(209, 207, 207);
@@ -217,4 +219,21 @@ input[type="checkbox"] {
             height: 15px;
             margin-top: 20px;
             margin-right: 20px;
+        }
+
+        .gander{
+            display: flex;
+            gap: 30px;
+        }
+        .ganderresult{
+            margin-top: 30px;
+        }
+
+        .leftdivimage{
+            margin-top: -100px;
+            margin-bottom: 30px;
+        }
+
+        #pictur{
+            color: aliceblue;
         }

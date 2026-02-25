@@ -10,118 +10,89 @@
 </head>
 
 <body>
-    <div class="logo"><img src="redCard/logo.png" alt="logo"></div>
-    <div class="container">
-        <!-- left side -->
-        <div class="left">
-            <div class="leftdivimage">
-                <label for="profilePic">
-                    <h2 id="pictur">Upload Profile Image:</h2>
-                </label><br>
-                <input type="file" class="input" id="profilePic" accept="image/*">
-                <p id="fileResult"></p>
-            </div>
-
-            <h1 class="h1left">Submission</h1>
-            <div class="imgplus-flex">
-                <p>All ditale of submission will be kept strictly private and<br> confidential by Mallman and will not
-                    be
-                    used for any purpose<br> other then judging red card 2018 winners.<img id="plus-left" src="plus.svg"
-                        alt="plus"></p> <br>
-            </div>
-            <div class="imgplus-flex">
-                <h2 class="strongleft">Application will close on the<br> 15th december 2017<img id="plus-left2"
-                        src="plus.svg" alt="plus"></h2>
+    <form action="">
+        <div class="logo"><img src="redCard/logo.png" alt="logo"></div>
+        <div class="container"> <!-- left side -->
+            <div class="left">
+                <div class="leftdivimage"> <label for="profilePic">
+                        <h2 id="pictur">Upload Profile Image:</h2>
+                    </label><br> <input type="file" class="input" id="profilePic" accept="image/*">
+                    <p id="fileResult"></p>
+                </div>
+                <h1 class="h1left">Submission</h1>
+                <div class="imgplus-flex">
+                    <p>All ditale of submission will be kept strictly private and<br> confidential by Mallman and will
+                        not be used for any purpose<br> other then judging red card 2018 winners.<img id="plus-left"
+                            src="plus.svg" alt="plus"></p> <br>
+                </div>
+                <div class="imgplus-flex">
+                    <h2 class="strongleft">Application will close on the<br> 15th december 2017<img id="plus-left2"
+                            src="plus.svg" alt="plus"></h2>
+                </div>
+            </div> <!-- right side -->
+            <div class="rightside">
+                <div id="rightside1">
+                    <div>
+                        <h3>Name:</h3> <input type="text" class="input" id="name" placeholder="Enter your name">
+                        <p id="nameResult"></p>
+                    </div>
+                    <div>
+                        <h3>Email:</h3> <input type="text" class="input" id="email" placeholder="Enter your email">
+                        <p id="emailResult"></p>
+                    </div>
+                    <div>
+                        <h3>Date of birth:</h3> <input type="date" class="input" id="dob">
+                        <p id="dobResult"></p>
+                    </div>
+                    <div>
+                        <h3>Phone number:</h3> <input type="text" class="input" id="phone"
+                            placeholder="Enter phone number">
+                        <p id="phoneResult"></p>
+                    </div>
+                    <div>
+                        <h3>CNIC:</h3> <input type="text" class="input" id="cnic"
+                            placeholder="Enter CNIC (xxxxx-xxxxxxx-x)" maxlength="15">
+                        <p id="cnicResult"></p>
+                    </div>
+                    <h3>Select your gender:</h3><br>
+                    <div class="gander"> <input type="radio" name="gender" id="male" value="Male"> <label
+                            for="male">Male</label><br> <input type="radio" name="gender" id="female" value="Female">
+                        <label for="female">Female</label><br> <input type="radio" name="gender" id="other"
+                            value="Other">
+                        <label for="other">Other</label>
+                    </div>
+                    <p class="ganderresult" id="genderResult"></p> <label for="city">City:</label> <select id="city"
+                        class="input">
+                        <option value="">-- Select Your City --</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Peshawar">Peshawar</option>
+                        <option value="Quetta">Quetta</option>
+                        <option value="Abbottabad">Abbottabad</option>
+                    </select>
+                    <p id="cityResult"></p> <label for="country">
+                        <h3>Country:</h3>
+                    </label><br> <select id="country" class="input">
+                        <option value="">-- Select Your Country --</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="India">India</option>
+                        <option value="USA">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                    <p id="countryResult"></p> <label for="website">
+                        <h3>Website (optional):</h3>
+                    </label><br> <input type="text" class="input" id="website" placeholder="https://example.com">
+                    <p id="websiteResult"></p> <button class="last-button" type="submit"> <img class="TICK-SVG"
+                            src="tick.svg" alt="tick" width="35px" height="35px"> Submission Successful </button> <img
+                        class="bottomcornerimg" src="redCard/icon_awards.png" alt="icon_awards"> <br><br><br>
+                </div>
             </div>
         </div>
-
-        <!-- right side  -->
-        <div class="rightside">
-            <div id="rightside1">
-                <div>
-                    <h3>Name:</h3>
-                    <input type="text" class="input" id="name" placeholder="Enter your name">
-                    <p id="nameResult"></p>
-                </div>
-                <div>
-                    <h3>Email:</h3>
-                    <input type="text" class="input" id="email" placeholder="Enter your email">
-                    <p id="emailResult"></p>
-                </div>
-                <div>
-                    <h3>Date of birth:</h3>
-                    <input type="date" class="input" id="dob">
-                    <p id="dobResult"></p>
-                </div>
-                <div>
-                    <h3>Phone number:</h3>
-                    <input type="text" class="input" id="phone" placeholder="Enter phone number">
-                    <p id="phoneResult"></p>
-                </div>
-
-                <div>
-                    <h3>CNIC:</h3>
-                    <input type="text" class="input" id="cnic" placeholder="Enter CNIC (xxxxx-xxxxxxx-x)"
-                        maxlength="15">
-                    <p id="cnicResult"></p>
-                </div>
-
-
-                <h3>Select your gender:</h3><br>
-                <div class="gander">
-                    <input type="radio" name="gender" id="male" value="Male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" name="gender" id="female" value="Female">
-                    <label for="female">Female</label><br>
-                    <input type="radio" name="gender" id="other" value="Other">
-                    <label for="other">Other</label>
-                </div>
-                <p class="ganderresult" id="genderResult"></p>
-
-                <label for="city">City:</label>
-                <select id="city" class="input">
-                    <option value="">-- Select Your City --</option>
-                    <option value="Karachi">Karachi</option>
-                    <option value="Lahore">Lahore</option>
-                    <option value="Islamabad">Islamabad</option>
-                    <option value="Peshawar">Peshawar</option>
-                    <option value="Quetta">Quetta</option>
-                    <option value="Abbottabad">Abbottabad</option>
-                </select>
-                <p id="cityResult"></p>
-
-
-                <label for="country">
-                    <h3>Country:</h3>
-                </label><br>
-                <select id="country" class="input">
-                    <option value="">-- Select Your Country --</option>
-                    <option value="Pakistan">Pakistan</option>
-                    <option value="India">India</option>
-                    <option value="USA">United States</option>
-                    <option value="UK">United Kingdom</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Australia">Australia</option>
-                </select>
-                <p id="countryResult"></p>
-
-                <label for="website"><h3>Website (optional):</h3></label><br>
-                <input type="text" class="input" id="website" placeholder="https://example.com">
-                <p id="websiteResult"></p>
-
-
-
-
-
-
-                <button class="last-button" type="submit"><img class="TICK-SVG" src="tick.svg" alt="tick" width="35px"
-                        height="35 px">Submission Successful</button>
-
-                <img class="bottomcornerimg" src="redCard/icon_awards.png" alt="icon_awards">
-                <br><br><br>
-
-            </div>
-            <script src="script.js"></script>
+    </form>
+    <script src="script.js"></script>
 </body>
 
 </html>

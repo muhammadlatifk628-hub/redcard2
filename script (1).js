@@ -2,7 +2,7 @@
 let input = document.getElementById("name");
 let nameResult = document.getElementById("nameResult");
 
-input.addEventListener("keydown", function (event) {
+input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") validateName();
 });
 
@@ -35,7 +35,7 @@ function validateName() {
 input.addEventListener("input", validateName);
 
 // ── Email ─────────────────────────────────────────────────────────────────────
-let emailInput = document.getElementById("email");
+let emailInput  = document.getElementById("email");
 let emailResult = document.getElementById("emailResult");
 
 emailInput.addEventListener("input", function () {
@@ -58,8 +58,8 @@ emailInput.addEventListener("input", function () {
 });
 
 // ── Date of Birth ─────────────────────────────────────────────────────────────
-let dobInput = document.getElementById("dob");
-let dobResult = document.getElementById("dobResult");
+let dobInput   = document.getElementById("dob");
+let dobResult  = document.getElementById("dobResult");
 
 dobInput.addEventListener("input", function () {
     let dobValue = dobInput.value;
@@ -70,9 +70,9 @@ dobInput.addEventListener("input", function () {
         return;
     }
 
-    let today = new Date();
+    let today     = new Date();
     let birthDate = new Date(dobValue);
-    let age = today.getFullYear() - birthDate.getFullYear();
+    let age       = today.getFullYear() - birthDate.getFullYear();
     let monthDiff = today.getMonth() - birthDate.getMonth();
 
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) age--;
@@ -87,7 +87,7 @@ dobInput.addEventListener("input", function () {
 });
 
 // ── Phone ─────────────────────────────────────────────────────────────────────
-let phoneInput = document.getElementById("phone");
+let phoneInput  = document.getElementById("phone");
 let phoneResult = document.getElementById("phoneResult");
 
 phoneInput.addEventListener("input", function () {
@@ -120,7 +120,7 @@ phoneInput.addEventListener("input", function () {
 });
 
 // ── CNIC ──────────────────────────────────────────────────────────────────────
-const cnicInput = document.getElementById("cnic");
+const cnicInput  = document.getElementById("cnic");
 const cnicResult = document.getElementById("cnicResult");
 
 cnicInput.addEventListener("input", function () {
@@ -128,9 +128,9 @@ cnicInput.addEventListener("input", function () {
     if (value.length > 13) value = value.slice(0, 13);
 
     let formatted = "";
-    if (value.length <= 5) formatted = value;
+    if      (value.length <= 5)  formatted = value;
     else if (value.length <= 12) formatted = value.slice(0, 5) + "-" + value.slice(5);
-    else formatted = value.slice(0, 5) + "-" + value.slice(5, 12) + "-" + value.slice(12);
+    else                          formatted = value.slice(0, 5) + "-" + value.slice(5, 12) + "-" + value.slice(12);
 
     cnicInput.value = formatted;
 
@@ -211,8 +211,8 @@ citySelect.addEventListener("change", function () {
 });
 
 // ── Country ───────────────────────────────────────────────────────────────────
-const countrySelect = document.getElementById("country");
-const countryResult = document.getElementById("countryResult");
+const countrySelect  = document.getElementById("country");
+const countryResult  = document.getElementById("countryResult");
 
 countrySelect.addEventListener("change", function () {
     if (countrySelect.value === "") {
@@ -225,7 +225,7 @@ countrySelect.addEventListener("change", function () {
 });
 
 // ── Website (optional) ────────────────────────────────────────────────────────
-const websiteInput = document.getElementById("website");
+const websiteInput  = document.getElementById("website");
 const websiteResult = document.getElementById("websiteResult");
 
 websiteInput.addEventListener("input", function () {
@@ -257,25 +257,25 @@ submitButton.addEventListener("click", function (e) {
     validateName();
     validateGender();
 
-    let nameValid = nameResult.innerHTML.includes("✅");
-    let emailValid = emailResult.innerHTML.includes("✅");
-    let dobValid = dobResult.innerHTML.includes("✅");
-    let phoneValid = phoneResult.innerHTML.includes("✅");
-    let cnicValid = cnicResult.innerHTML.includes("✅");
-    let genderValid = genderResult.innerHTML.includes("✅");
-    let cityValid = citySelect.value !== "";
+    let nameValid    = nameResult.innerHTML.includes("✅");
+    let emailValid   = emailResult.innerHTML.includes("✅");
+    let dobValid     = dobResult.innerHTML.includes("✅");
+    let phoneValid   = phoneResult.innerHTML.includes("✅");
+    let cnicValid    = cnicResult.innerHTML.includes("✅");
+    let genderValid  = genderResult.innerHTML.includes("✅");
+    let cityValid    = citySelect.value !== "";
     let countryValid = countrySelect.value !== "";
-    let fileValid = profilePic.files.length > 0;
+    let fileValid    = profilePic.files.length > 0;
     let websiteValid = websiteInput.value === "" || websiteResult.innerHTML.includes("✅");
 
-    if (!cityValid) { cityResult.innerHTML = "❌ Please select your city"; citySelect.style.border = "2px solid red"; }
+    if (!cityValid)    { cityResult.innerHTML    = "❌ Please select your city";    citySelect.style.border    = "2px solid red"; }
     if (!countryValid) { countryResult.innerHTML = "❌ Please select your country"; countrySelect.style.border = "2px solid red"; }
-    if (!fileValid) { fileResult.innerHTML = "❌ Please upload a profile image"; }
+    if (!fileValid)    { fileResult.innerHTML    = "❌ Please upload a profile image"; }
 
     if (nameValid && emailValid && dobValid && phoneValid && cnicValid &&
         genderValid && cityValid && countryValid && fileValid && websiteValid) {
 
-        submitResult.innerHTML = "✅ Submission Successful! Your file is downloading...";
+        submitResult.innerHTML  = "✅ Submission Successful! Your file is downloading...";
         submitResult.style.color = "lightgreen";
 
         // ── Build & download the registration text file ──────────────────────
@@ -300,14 +300,14 @@ Photo     : ${profilePic.files[0] ? profilePic.files[0].name : "N/A"}
 
         const blob = new Blob([data], { type: "text/plain" });
         const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
+        link.href     = URL.createObjectURL(blob);
         link.download = "Registration_Form.txt";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
     } else {
-        submitResult.innerHTML = "❌ Please fill all fields correctly before submitting.";
+        submitResult.innerHTML  = "❌ Please fill all fields correctly before submitting.";
         submitResult.style.color = "red";
     }
 });
